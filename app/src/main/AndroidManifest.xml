@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Quiz_list_login"></activity>
+        <activity android:name=".Quiz_solve"></activity>
+        <activity android:name=".Quiz_list_login" />
         <activity android:name=".Quiz_list_no_login" />
         <activity android:name=".Quiz_list_owner" />
         <activity android:name=".Sign_up" />
@@ -22,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -15,12 +15,12 @@ public class Login extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.sign_up_text);
         textView.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View v){
-                                            Intent intent= new Intent(Login.this, Sign_up.class);
-                                            startActivity(intent);
-                                        }
-                                    }
+                @Override
+                public void onClick(View v){
+                    Intent intent= new Intent(Login.this, Sign_up.class);
+                    startActivity(intent);
+                }
+            }
         );
     }
 }
