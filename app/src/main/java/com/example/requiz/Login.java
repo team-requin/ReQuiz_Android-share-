@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,13 +11,9 @@ import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login extends AppCompatActivity {
 
@@ -26,7 +21,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        final JsonPlaceHolderApi jsonPlaceHolderApi;
+        final JsonLoginApi jsonPlaceHolderApi;
         Button registerButton = findViewById(R.id.login_button);
         TextView textView = findViewById(R.id.sign_up_text);
         final EditText id = findViewById(R.id.input_id);
@@ -45,7 +40,7 @@ public class Login extends AppCompatActivity {
                     jsonObject.addProperty("pw", getPw);
 //                    jsonPlaceHolderApi.jsonPlaceHolderApi(jsonObject);
                     RetrofitConnection retrofitConnection = new RetrofitConnection();
-                    Call<Token> call = retrofitConnection.sever.getPost(jsonObject);
+                    Call<Token> call = retrofitConnection.sever.login(jsonObject);
                     call.enqueue(new Callback<Token>() {
                         @Override
                         public void onResponse(Call<Token> call, Response<Token> response) {
@@ -56,7 +51,7 @@ public class Login extends AppCompatActivity {
                                         .show();
                                 Intent intent = new Intent(Login.this, Sign_up.class);
                                 startActivity(intent);
-
+    
                             }
                             else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
@@ -70,7 +65,7 @@ public class Login extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onFailure(Call<Token> call, Throwable t) {
+                            public void onFailure(Call<Token> call, Throwable t) {
 
                         }
                     });

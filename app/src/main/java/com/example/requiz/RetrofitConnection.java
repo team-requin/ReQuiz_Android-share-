@@ -1,13 +1,7 @@
 package com.example.requiz;
 
-import android.content.Intent;
-
-import java.util.List;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -23,9 +17,9 @@ public class RetrofitConnection {
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
-    JsonPlaceHolderApi sever = retrofit.create(JsonPlaceHolderApi.class);
+    JsonLoginApi sever = retrofit.create(JsonLoginApi.class);
 
-    JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+    JsonLoginApi jsonPlaceHolderApi = retrofit.create(JsonLoginApi.class);
 //    Call<List<LoginPost>> call = jsonPlaceHolderApi.getPost();
 
 //                    call.enqueue(new Callback<List<LoginPost>>() {

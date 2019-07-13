@@ -15,6 +15,7 @@ public class SignUpPost {
     public String getPw() {
         return pw;
     }
+
     public String getPw_check() {
         return pw_check;
     }
