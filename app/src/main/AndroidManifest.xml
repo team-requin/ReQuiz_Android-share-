@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.requiz">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Quiz_solve"></activity>
+        <activity android:name=".Quiz_make"></activity>
+        <activity android:name=".Quiz_solve" />
         <activity android:name=".Quiz_list_login" />
         <activity android:name=".Quiz_list_no_login" />
         <activity android:name=".Quiz_list_owner" />
@@ -24,10 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
